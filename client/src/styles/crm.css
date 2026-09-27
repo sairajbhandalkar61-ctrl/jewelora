@@ -1,0 +1,258 @@
+/* CRM & Procurement: Customers, Suppliers, Purchases & Profile Drawers */
+
+.customers-page,
+.suppliers-page,
+.purchases-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* CRM Metric Stats Strip */
+.crm-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.crm-stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  box-shadow: var(--shadow-card);
+}
+
+.crm-stat-label {
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.crm-stat-val {
+  font-family: var(--font-mono);
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.crm-stat-val.text-slate {
+  color: #a89f91;
+}
+
+/* CRM Table Panel */
+.crm-table-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+}
+
+.crm-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Customer / Supplier Table Cell */
+.crm-customer-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.crm-customer-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-full);
+  background: var(--gold-bg);
+  border: 1px solid var(--gold-border);
+  color: var(--gold-light);
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.crm-customer-avatar.supplier {
+  background: rgba(118, 107, 93, 0.15);
+  border-color: rgba(118, 107, 93, 0.35);
+  color: #dfd8cc;
+}
+
+.crm-customer-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.crm-customer-name {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.92rem;
+}
+
+.crm-customer-id {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.crm-contact-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+.invoices-pill {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 600;
+  padding: 3px 8px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xs);
+  color: var(--text-secondary);
+}
+
+.inward-qty-pill {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  background: var(--gold-bg);
+  color: var(--gold-light);
+  border: 1px solid var(--gold-border);
+}
+
+/* ==========================================================================
+   Customer / Supplier Profile Drawer / Modal
+   ========================================================================== */
+.profile-loading-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.customer-profile-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.profile-top-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 20px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+}
+
+.profile-avatar-large {
+  width: 58px;
+  height: 58px;
+  border-radius: var(--radius-full);
+  background: var(--gold-gradient);
+  color: #12100e;
+  font-size: 1.4rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(200, 154, 69, 0.35);
+}
+
+.profile-avatar-large.supplier {
+  background: #766b5d;
+  color: #ffffff;
+}
+
+.profile-meta-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.profile-contacts-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 0.84rem;
+  color: var(--text-muted);
+}
+
+.profile-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+}
+
+.profile-kpi-card {
+  padding: 12px 14px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.p-kpi-label {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.p-kpi-val {
+  font-family: var(--font-mono);
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.profile-history-table {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.p-table-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.luxury-table.mini th {
+  padding: 10px 12px;
+  font-size: 0.72rem;
+}
+
+.luxury-table.mini td {
+  padding: 10px 12px;
+  font-size: 0.82rem;
+}
+
+.modal-actions-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-default);
+  margin-top: 8px;
+}

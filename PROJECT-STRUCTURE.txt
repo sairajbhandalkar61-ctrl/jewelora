@@ -1,0 +1,38 @@
+Jewelora/
+│
+├── client/                  React + Vite frontend
+│   ├── src/
+│   │   ├── components/
+│   │   ├── layouts/
+│   │   │   └── Layout.jsx
+│   │   ├── pages/
+│   │   │   ├── Login.jsx
+│   │   │   ├── Dashboard.jsx
+│   │   │   ├── Jewellery.jsx
+│   │   │   ├── Customers.jsx
+│   │   │   ├── Suppliers.jsx
+│   │   │   ├── Purchases.jsx
+│   │   │   ├── Sales.jsx
+│   │   │   └── Reports.jsx
+│   │   ├── api.js
+│   │   ├── App.jsx
+│   │   ├── main.jsx
+│   │   └── styles.css
+│   ├── package.json
+│   └── vite.config.js
+│
+├── server/                  Node.js + Express backend
+│   ├── config/db.js
+│   ├── controllers/
+│   ├── models/
+│   ├── routes/
+│   ├── .env.example
+│   ├── package.json
+│   └── server.js
+│
+├── database/
+│   └── jewelora.sql
+│
+├── package.json
+├── setup-windows.bat
+└── README.md

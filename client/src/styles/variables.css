@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* Fonts */
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', Consolas, Monaco, monospace;
+
+  /* Gold Luxury Accent Palette */
+  --gold-primary: #c89a45;
+  --gold-light: #dfb666;
+  --gold-lighter: #f3dfb5;
+  --gold-dark: #9e7529;
+  --gold-darker: #73541b;
+  --gold-bg: rgba(200, 154, 69, 0.08);
+  --gold-bg-hover: rgba(200, 154, 69, 0.16);
+  --gold-border: rgba(200, 154, 69, 0.22);
+  --gold-border-strong: rgba(200, 154, 69, 0.45);
+  --gold-glow: 0 0 24px rgba(200, 154, 69, 0.25);
+  --gold-gradient: linear-gradient(135deg, #dfb666 0%, #c89a45 50%, #9e7529 100%);
+  --gold-gradient-hover: linear-gradient(135deg, #eed088 0%, #d4a754 50%, #ad8232 100%);
+  --champagne: #ead9b8;
+
+  /* Semantic Status Colors */
+  --success: #2ecc71;
+  --success-bg: rgba(46, 204, 113, 0.12);
+  --success-border: rgba(46, 204, 113, 0.25);
+
+  --warning: #f39c12;
+  --warning-bg: rgba(243, 156, 18, 0.12);
+  --warning-border: rgba(243, 156, 18, 0.25);
+
+  --danger: #e74c3c;
+  --danger-bg: rgba(231, 76, 60, 0.12);
+  --danger-border: rgba(231, 76, 60, 0.25);
+
+  --info: #3498db;
+  --info-bg: rgba(52, 152, 219, 0.12);
+  --info-border: rgba(52, 152, 219, 0.25);
+
+  --purple: #9b59b6;
+  --purple-bg: rgba(155, 89, 182, 0.12);
+  --purple-border: rgba(155, 89, 182, 0.25);
+
+  /* Radii */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Layout dimensions */
+  --sidebar-width: 260px;
+  --sidebar-collapsed-width: 80px;
+  --topbar-height: 72px;
+
+  /* Dark Theme (Default) */
+  --bg-app: #0e0d0b;
+  --bg-surface: #171512;
+  --bg-card: #1f1b16;
+  --bg-card-hover: #26221c;
+  --bg-input: #151310;
+  --bg-input-focus: #1c1915;
+  --bg-elevated: #29241e;
+  --bg-glass: rgba(23, 21, 18, 0.85);
+
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --border-default: rgba(200, 154, 69, 0.18);
+  --border-hover: rgba(200, 154, 69, 0.38);
+
+  --text-primary: #fcfbfa;
+  --text-secondary: #b8aea2;
+  --text-muted: #756d64;
+  --text-inverse: #0e0d0b;
+  --text-gold: #dfb666;
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 12px 36px rgba(0, 0, 0, 0.55);
+  --shadow-drawer: -8px 0 36px rgba(0, 0, 0, 0.65);
+  --shadow-card: 0 4px 18px rgba(0, 0, 0, 0.3);
+
+  --scrollbar-track: #151310;
+  --scrollbar-thumb: #332d25;
+  --scrollbar-thumb-hover: #4d4438;
+}
+
+/* Light Theme Variables */
+[data-theme="light"] {
+  --bg-app: #f7f5f0;
+  --bg-surface: #ffffff;
+  --bg-card: #ffffff;
+  --bg-card-hover: #fcfbfa;
+  --bg-input: #f9f8f5;
+  --bg-input-focus: #ffffff;
+  --bg-elevated: #f0ebe1;
+  --bg-glass: rgba(255, 255, 255, 0.9);
+
+  --border-subtle: rgba(0, 0, 0, 0.06);
+  --border-default: rgba(184, 134, 11, 0.22);
+  --border-hover: rgba(184, 134, 11, 0.45);
+
+  --text-primary: #171512;
+  --text-secondary: #5f5548;
+  --text-muted: #948877;
+  --text-inverse: #ffffff;
+  --text-gold: #9e7529;
+
+  --gold-primary: #b8860b;
+  --gold-light: #c89a45;
+  --gold-bg: rgba(184, 134, 11, 0.08);
+  --gold-bg-hover: rgba(184, 134, 11, 0.15);
+  --gold-border: rgba(184, 134, 11, 0.25);
+  --gold-glow: 0 0 20px rgba(184, 134, 11, 0.2);
+
+  --shadow-sm: 0 2px 8px rgba(30, 20, 10, 0.05);
+  --shadow-md: 0 6px 18px rgba(30, 20, 10, 0.08);
+  --shadow-lg: 0 14px 34px rgba(30, 20, 10, 0.12);
+  --shadow-drawer: -8px 0 36px rgba(30, 20, 10, 0.16);
+  --shadow-card: 0 2px 12px rgba(30, 20, 10, 0.06);
+
+  --scrollbar-track: #f0ece3;
+  --scrollbar-thumb: #d4ccbd;
+  --scrollbar-thumb-hover: #b5a995;
+}

@@ -1,0 +1,116 @@
+/* Business Analytics, Financial Intelligence & Reports */
+
+.reports-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.stat-sub-text {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+}
+
+/* Report Navigation Tabs */
+.reports-tab-nav {
+  display: flex;
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  padding: 4px;
+  gap: 6px;
+  overflow-x: auto;
+  width: fit-content;
+}
+
+.report-nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: var(--radius-sm);
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+}
+
+.report-nav-btn:hover {
+  color: var(--text-primary);
+}
+
+.report-nav-btn.active {
+  background: var(--gold-gradient);
+  color: #12100e;
+  box-shadow: 0 2px 10px rgba(200, 154, 69, 0.3);
+}
+
+.report-tab-body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.report-charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 20px;
+}
+
+/* Health Metrics Summary Panel */
+.summary-card-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.health-metrics-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.health-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  transition: border-color var(--transition-fast);
+}
+
+.health-row:hover {
+  border-color: var(--gold-border);
+}
+
+.health-icon-box {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.health-icon-box.bg-gold-light {
+  background: var(--gold-bg);
+  color: var(--gold-light);
+}
+
+.health-icon-box.bg-emerald-light {
+  background: var(--success-bg);
+  color: var(--success);
+}
+
+.health-icon-box.bg-warning-light {
+  background: var(--warning-bg);
+  color: var(--warning);
+}
+
+.alert-tag {
+  color: var(--warning) !important;
+}

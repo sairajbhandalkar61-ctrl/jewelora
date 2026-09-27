@@ -1,0 +1,16 @@
+/* ==========================================================================
+   JEWELORA – INTELLIGENT JEWELLERY BUSINESS COMMAND CENTER
+   Commercial Master Stylesheet
+   ========================================================================== */
+
+@import './styles/variables.css';
+@import './styles/reset.css';
+@import './styles/layout.css';
+@import './styles/components.css';
+@import './styles/login.css';
+@import './styles/dashboard.css';
+@import './styles/jewellery.css';
+@import './styles/billing.css';
+@import './styles/crm.css';
+@import './styles/reports.css';
+@import './styles/print.css';

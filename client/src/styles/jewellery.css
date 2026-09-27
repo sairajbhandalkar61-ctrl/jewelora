@@ -1,0 +1,693 @@
+/* Jewellery Vault: Grid, Table, Spec Cards, Modals & Live Price Calculator */
+
+.jewellery-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Module Header Banner */
+.module-header-banner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.module-title {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.module-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.module-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Filter Controls Card */
+.filter-controls-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: 18px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: var(--shadow-card);
+}
+
+.search-and-view-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.inventory-search-wrap {
+  position: relative;
+  flex: 1;
+  max-width: 480px;
+  display: flex;
+  align-items: center;
+}
+
+.inventory-search-wrap .search-icon {
+  position: absolute;
+  left: 14px;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.inventory-search-input {
+  width: 100%;
+  padding-left: 42px !important;
+  border-radius: var(--radius-full) !important;
+}
+
+.view-mode-toggle {
+  display: flex;
+  background: var(--bg-input);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  padding: 3px;
+  gap: 2px;
+}
+
+.view-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 12px;
+  border-radius: var(--radius-xs);
+  color: var(--text-muted);
+  transition: all var(--transition-fast);
+}
+
+.view-btn:hover {
+  color: var(--text-primary);
+}
+
+.view-btn.active {
+  background: var(--gold-primary);
+  color: #12100e;
+}
+
+/* Category Filter Chips */
+.category-scroll-chips {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.cat-chip {
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+}
+
+.cat-chip:hover {
+  border-color: var(--gold-border);
+  color: var(--text-primary);
+}
+
+.cat-chip.active {
+  background: var(--gold-bg);
+  color: var(--gold-light);
+  border-color: var(--gold-border-strong);
+}
+
+.dropdown-filters-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-subtle);
+  flex-wrap: wrap;
+}
+
+.filter-select-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.filter-select-group select {
+  width: auto;
+  min-width: 140px;
+  font-size: 0.82rem;
+  padding: 6px 30px 6px 12px;
+}
+
+.results-count-pill {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* Jewellery Card Grid */
+.jewellery-grid-view {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.jewellery-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-card);
+  transition: all var(--transition-normal);
+  position: relative;
+}
+
+.jewellery-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--gold-border-strong);
+  box-shadow: var(--shadow-lg), 0 0 20px rgba(200, 154, 69, 0.16);
+}
+
+.card-media-wrap {
+  height: 200px;
+  position: relative;
+  background: radial-gradient(circle, #25201a 0%, #151310 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.jewellery-card:hover .card-img {
+  transform: scale(1.06);
+}
+
+.card-status-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+}
+
+.card-category-tag {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  z-index: 2;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: rgba(18, 16, 14, 0.85);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--gold-border);
+  color: var(--gold-light);
+  padding: 3px 8px;
+  border-radius: var(--radius-xs);
+}
+
+.card-content {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.card-sku-chip {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.card-product-name {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.card-specs-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.spec-pill {
+  font-size: 0.72rem;
+  padding: 3px 8px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xs);
+  color: var(--text-secondary);
+}
+
+.card-pricing-block {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.price-label {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.price-val {
+  font-family: var(--font-mono);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--gold-light);
+}
+
+.stock-label {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-align: right;
+}
+
+.stock-val {
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.card-actions-bar {
+  display: flex;
+  border-top: 1px solid var(--border-subtle);
+  background: var(--bg-surface);
+}
+
+.quick-action-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+}
+
+.quick-action-btn:hover {
+  background: var(--gold-bg);
+  color: var(--gold-light);
+}
+
+.quick-action-btn:first-child {
+  border-right: 1px solid var(--border-subtle);
+}
+
+/* Jewellery Table Component */
+.table-module-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.table-sku-tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--gold-light);
+  font-weight: 600;
+}
+
+.table-product-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.table-product-thumb {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  border: 1px solid var(--border-default);
+  background: var(--bg-surface);
+}
+
+.table-product-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.table-product-name {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+}
+
+.table-product-sub {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+}
+
+.table-actions-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.table-action-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.table-action-icon:hover {
+  color: var(--gold-light);
+  border-color: var(--gold-border);
+  background: var(--gold-bg);
+}
+
+.table-action-icon.danger:hover {
+  color: var(--danger);
+  border-color: var(--danger-border);
+  background: var(--danger-bg);
+}
+
+.table-pagination-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.pagination-buttons {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.page-nav-btn,
+.page-num-btn {
+  padding: 5px 10px;
+  border-radius: var(--radius-xs);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: all var(--transition-fast);
+}
+
+.page-num-btn.active {
+  background: var(--gold-primary);
+  color: #12100e;
+  border-color: var(--gold-primary);
+}
+
+/* Detail Modal Specifics */
+.jewellery-detail-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.detail-top-split {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 600px) {
+  .detail-top-split {
+    grid-template-columns: 1fr;
+  }
+}
+
+.detail-media-card {
+  height: 240px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: radial-gradient(circle, #25201a 0%, #151310 100%);
+  border: 1px solid var(--border-default);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.detail-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hallmark-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(18, 16, 14, 0.9);
+  padding: 4px 8px;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--gold-border);
+  color: var(--gold-light);
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.detail-specs-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.detail-product-name {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: var(--text-primary);
+}
+
+.spec-attributes-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.spec-item {
+  padding: 8px 12px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+.spec-label {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.spec-val {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+.detail-breakdown-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--gold-border);
+  border-radius: var(--radius-md);
+  padding: 16px;
+}
+
+.breakdown-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gold-light);
+  margin-bottom: 12px;
+}
+
+.breakdown-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.85rem;
+}
+
+.b-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--text-secondary);
+}
+
+.detail-history-section {
+  padding-top: 16px;
+  border-top: 1px solid var(--border-default);
+}
+
+.history-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+@media (max-width: 600px) {
+  .history-columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+.history-mini-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.h-date {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+}
+
+.h-party {
+  font-weight: 600;
+  font-size: 0.84rem;
+  color: var(--text-primary);
+}
+
+.h-amount {
+  font-family: var(--font-mono);
+  font-weight: 700;
+}
+
+/* Form Modal & Live Price Calculator */
+.form-layout-split {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 24px;
+}
+
+@media (max-width: 850px) {
+  .form-layout-split {
+    grid-template-columns: 1fr;
+  }
+}
+
+.live-pricing-calculator {
+  background: var(--bg-card);
+  border: 1px solid var(--gold-border);
+  border-radius: var(--radius-md);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.calc-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.calc-title {
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  letter-spacing: 0.08em;
+}
+
+.calc-rates-banner {
+  padding: 8px 12px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xs);
+  font-size: 0.74rem;
+  color: var(--text-muted);
+}
+
+.calc-breakdown-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.84rem;
+}
+
+.calc-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--text-secondary);
+}
+
+.calc-row.final {
+  padding-top: 10px;
+  border-top: 1px solid var(--border-default);
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.image-preset-chips {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+.preset-chip {
+  padding: 4px 10px;
+  font-size: 0.74rem;
+  border-radius: var(--radius-full);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+}
+
+.preset-chip.active {
+  background: var(--gold-bg);
+  color: var(--gold-light);
+  border-color: var(--gold-border);
+}

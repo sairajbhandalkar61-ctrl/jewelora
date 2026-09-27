@@ -1,0 +1,62 @@
+/* Commercial Print Stylesheet for A4 GST Tax Invoices */
+
+@media print {
+  /* Hide all app chrome */
+  body, html {
+    background: #ffffff !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .sidebar,
+  .topbar,
+  .mobile-overlay,
+  .modal-overlay,
+  .modal-header,
+  .modal-footer,
+  .modal-close-btn,
+  .toast-container,
+  .global-search-modal,
+  .btn,
+  .no-print {
+    display: none !important;
+  }
+
+  /* Reset modal containers so invoice fills page */
+  .modal-content {
+    border: none !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    max-height: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+  }
+
+  .modal-body {
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  .invoice-print-container {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .invoice-document {
+    border: none !important;
+    box-shadow: none !important;
+    padding: 10mm 15mm !important;
+    margin: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  @page {
+    size: A4 portrait;
+    margin: 10mm;
+  }
+}
