@@ -37,8 +37,8 @@ app.use(cors({
 
 app.use(express.json());
 
-// Service Root
-app.get("/", (req, res) => {
+// Service Info
+app.get("/api/status", (req, res) => {
   res.json({
     status: "ok",
     service: "Jewelora API",
@@ -46,6 +46,7 @@ app.get("/", (req, res) => {
     documentation: "/api/health"
   });
 });
+
 
 // Production Health Check Endpoint (No authentication required)
 app.get("/api/health", async (req, res) => {
@@ -85,6 +86,22 @@ app.use((req, res, next) => {
   }
   next();
 });
+
+// Serve frontend static build if client/dist exists
+const path = require("path");
+const fs = require("fs");
+const clientDist = path.join(__dirname, "../client/dist");
+if (fs.existsSync(clientDist)) {
+  app.use(express.static(clientDist));
+  app.use((req, res, next) => {
+    if (req.method === "GET" && !req.path.startsWith("/api")) {
+      return res.sendFile(path.join(clientDist, "index.html"));
+    }
+    next();
+  });
+}
+
+
 
 // Production Global Error Handler
 app.use((err, req, res, next) => {

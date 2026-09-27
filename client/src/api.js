@@ -2,10 +2,13 @@
  * Jewelora API Client
  * Configured dynamically via environment variables for local & production deployment.
  */
-const rawBaseUrl = import.meta.env.VITE_API_URL || "http://localhost:5000";
+const rawBaseUrl = import.meta.env.VITE_API_URL || "";
 
 // Ensure the base URL terminates cleanly with /api without duplicates
-const BASE_URL = rawBaseUrl.replace(/\/api\/?$/, "").replace(/\/+$/, "") + "/api";
+const BASE_URL = rawBaseUrl
+  ? rawBaseUrl.replace(/\/api\/?$/, "").replace(/\/+$/, "") + "/api"
+  : "/api";
+
 
 async function request(path, options = {}) {
   const url = `${BASE_URL}${path.startsWith("/") ? path : `/${path}`}`;
